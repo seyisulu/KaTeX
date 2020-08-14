@@ -110,7 +110,7 @@ jobs:
             }));
           }
 
-          return {browser: include.map(b => b.browser, include};
+          return {browser: include.map(b => b.browser), include};
 
   screenshotter:
     runs-on: ubuntu-latest
