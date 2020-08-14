@@ -83,7 +83,7 @@ jobs:
           const include = [];
 
           if (context.eventName !== "pull_request_target") {
-            include.concat(SELENIUM_BROWSERS.map(b => ({
+            include.push(...SELENIUM_BROWSERS.map(b => ({
               browser: b,
               services: {selenium: {
                 image: `selenium/standalone-${b}:3.141.59-20200525`,
@@ -103,7 +103,7 @@ jobs:
                 name: "test screenshots",
               });
             }
-            include.concat(BROWSERSTACK_BROWSERS.map(b => ({
+            include.push(...BROWSERSTACK_BROWSERS.map(b => ({
               browser: b.browserName,
               services: {},
               browserstack: b,
